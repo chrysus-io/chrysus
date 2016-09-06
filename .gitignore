@@ -35,3 +35,17 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Remove the JetBrains WebStorm .idea directory
+/.idea/
+/.idea/dictionaries/
+/.idea/vcs.xml
+/.idea/deployment.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/chrysus.iml
+/.idea/jsLibraryMappings.xml
+/.idea/libraries/
+/.idea/libraries/chrysus_node_modules.xml
+/.idea/dictionaries/Ernes.xml

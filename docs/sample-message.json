@@ -1,0 +1,36 @@
+{
+  "message": {
+    "tasks": [
+      {
+        "task": "mtr",
+        "target": "8.8.8.8",
+        "outputs": [
+          {
+            "output": "slack",
+            "botKey": "xoxb-12345678910-XXXXXXXXXXXXXXXXXXXXXXXX",
+            "reqName": "john.doe",
+            "reqRoom": "some-slack-channel",
+            "reqRawText": "mtr XY1 8.8.8.8"
+          },
+          {
+            "output": "smtp",
+            "sendTo": "john.doe@email.com"
+          }
+        ]
+      },
+      {
+        "task": "mtr",
+        "target": "8.8.4.4",
+        "outputs": [
+          {
+            "output": "slack",
+            "botKey": "xoxb-12345678910-XXXXXXXXXXXXXXXXXXXXXXXX",
+            "reqName": "john.doe",
+            "reqRoom": "some-slack-channel",
+            "reqRawText": "mtr XY1 8.8.4.4"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "chrysus",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Ernest G. Wilson II <ErnestGWilsonII@gmail.com> (https://github.com/ernestgwilsonii)",
+  "description": "Chrysus Engine - Remote task bot engine based on JavaScript/Node.js and Redis Pub/Sub using JSON",
+  "keywords": ["chrysus", "bot", "engine", "remote", "task", "devops", "redis", "automate", "automation"],
+  "homepage": "http://chrysus.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrysus-io/chrysus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chrysus-io/chrysus/issues",
+    "email": "ErnestGWilsonII@gmail.com"
+  },
+  "main": "chrysus.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "node-slack-upload": "^1.1.1",
+    "redis": "^2.6.2"
+  }
+}
