@@ -6,14 +6,13 @@ var Severity = require("../logger/severity");
 var logger = require("../logger/logger");
 logger.setSeverity(Severity.info);
 
-var checkIn = function(taskDetails) {
+var checkIn = function(taskDetails, callback) {
     exec("systemctl status chrysus.service | grep Active | grep -v grep | grep -v Engine", function(error, stdout, stderr) {
         if(stderr) {
             logger.error("task stderr: " + stderr);
         }
 
-        var results = stdout;
-        outputDissector(taskDetails, results);
+        callback(taskDetails, stdout, stderr, error);
     });
 };
 

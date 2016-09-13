@@ -1,9 +1,20 @@
 // Task Dissector
 /////////////////
 
+var outputDissector = require("./output");
+
 var Severity = require("../logger/severity");
 var logger = require("../logger/logger");
 logger.setSeverity(Severity.info);
+
+var taskCallback = function(taskDetails, results, stderr, error) {
+    if(error) {
+        logger.error("Child Process Exec returned error: " + error);
+        return;
+    }
+
+    outputDissector(taskDetails, results);
+};
 
 var dissector = function(task, taskDetails) {
     logger.debug("task dissector type: " + task);
@@ -13,53 +24,53 @@ var dissector = function(task, taskDetails) {
     {
         case 'check-in':
             var checkIn = require("../tasks/checkIn");
-            checkIn(taskDetails);
+            checkIn(taskDetails, taskCallback);
         break;
 
         case 'dig':
             var dig = require("../tasks/dig");
-            dig(taskDetails);
+            dig(taskDetails, taskCallback);
         break;
 
         case 'mtr':
             var mtr = require("../tasks/mtr");
-            mtr(taskDetails);
+            mtr(taskDetails, taskCallback);
         break;
 
         case 'nmap':
             var nmap = require("../tasks/nmap");
-            nmap(taskDetails);
+            nmap(taskDetails, taskCallback);
         break;
 
         case 'nslookup':
             var nslookup = require("../tasks/nslookup");
-            nslookup(taskDetails);
+            nslookup(taskDetails, taskCallback);
         break;
 
         case 'ping':
             var ping = require("../tasks/ping");
-            ping(taskDetails);
+            ping(taskDetails, taskCallback);
         break;
 
         case 'sitrep':
             var sitrep = require("../tasks/sitrep");
-            sitrep(taskDetails);
+            sitrep(taskDetails, taskCallback);
         break;
 
         case 'traceroute':
             var traceroute = require("../tasks/traceroute");
-            traceroute(taskDetails);
+            traceroute(taskDetails, taskCallback);
         break;
 
         case 'whois':
             var whois = require("../tasks/whois");
-            whois(taskDetails);
+            whois(taskDetails, taskCallback);
         break;
 
         default: 
             logger.warning("unknown task type: " + task);
             var unknown = require("../tasks/unknown");
-            unknown(taskDetails);
+            unknown(taskDetails, taskCallback);
     }
 };
 
