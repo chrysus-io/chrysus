@@ -10,6 +10,9 @@ var logger = {
 
         sev = severity;
     },
+    getSeverity: function() {
+        return sev;
+    },
     debug: function(message) {
         logger.log(Severity.debug, "DEBUG: " + message);
     },

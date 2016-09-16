@@ -27,7 +27,7 @@ var slackFileSpecified = function(outputDetails, results) {
             logger.error("files.upload err: " + JSON.stringify(err));
         }
     });
-    setTimeout(fs.unlinkSync(stdout), 10000); // This deletes the local file after uploading it to Slack
+    setTimeout(fs.unlinkSync(results), 10000); // This deletes the local file after uploading it to Slack
 };
 
 module.exports = slackFileSpecified;

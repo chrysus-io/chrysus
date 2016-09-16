@@ -1,5 +1,4 @@
 var exec = require("child_process").exec;
-var outputDissector = require("../dissectors/output");
 
 // Logging
 var Severity = require("../logger/severity");
