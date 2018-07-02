@@ -29,7 +29,9 @@
     "start": "node chrysus.js",
     "test": "mocha ./tests/**/*.spec.js",
     "cover": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./tests/**/*.spec.js",
-    "coverage": "open ./coverage/lcov-report/index.html"
+    "coverage": "open ./coverage/lcov-report/index.html",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -40,6 +42,8 @@
   },
   "dependencies": {
     "node-slack-upload": "^1.1.1",
-    "redis": "^2.6.2"
-  }
+    "redis": "^2.6.2",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
