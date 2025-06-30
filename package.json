@@ -39,7 +39,7 @@
     "nock-exec": "^0.1.0"
   },
   "dependencies": {
-    "node-slack-upload": "^1.1.1",
+    "node-slack-upload": "^2.0.0",
     "redis": "^2.6.2"
   }
 }
